@@ -58,6 +58,14 @@
 // CMSIS Driver instance for STDIO retarget
 #define RETARGET_STDIO_UART 1
 
+// Sensor Driver instances
+#define SENSOR_TEMPERATURE     0
+#define SENSOR_HUMIDITY        1
+#define SENSOR_PRESSURE        2
+#define SENSOR_ACCELEROMETER   3
+#define SENSOR_GYROSCOPE       4
+#define SENSOR_MAGNETOMETER    5
+
 // CMSIS Drivers
 extern ARM_DRIVER_I2C       ARM_Driver_I2C_(ARDUINO_UNO_I2C);           // I2C
 extern ARM_DRIVER_SPI       ARM_Driver_SPI_(ARDUINO_UNO_SPI);           // SPI
@@ -66,6 +74,14 @@ extern ARM_DRIVER_USART     ARM_Driver_USART_(CMSIS_DRIVER_USART);      // STMod
 extern ARM_DRIVER_USART     ARM_Driver_USART_(RETARGET_STDIO_UART);     // ST-Link
 extern ARM_DRIVER_USBD      ARM_Driver_USBD_(CMSIS_DRIVER_USBD);        // USB Device
 extern ARM_DRIVER_WIFI      ARM_Driver_WiFi_(CMSIS_DRIVER_WIFI);        // WiFi
+
+// Sensor Drivers
+extern SENSOR_DRIVER        Driver_SENSOR(SENSOR_TEMPERATURE)           // Temperature sensor
+extern SENSOR_DRIVER        Driver_SENSOR(SENSOR_HUMIDITY)              // Humidity sensor
+extern SENSOR_DRIVER        Driver_SENSOR(SENSOR_PRESSURE)              // Pressure sensor
+extern SENSOR_DRIVER        Driver_SENSOR(SENSOR_ACCELEROMETER)         // Accelerometer sensor
+extern SENSOR_DRIVER        Driver_SENSOR(SENSOR_GYROSCOPE)             // Gyroscope sensor
+extern SENSOR_DRIVER        Driver_SENSOR(SENSOR_MAGNETOMETER)          // Magnetometer sensor
 
 #ifdef   CMSIS_shield_header
 #include CMSIS_shield_header

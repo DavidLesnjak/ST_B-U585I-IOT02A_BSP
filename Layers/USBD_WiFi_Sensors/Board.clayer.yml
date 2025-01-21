@@ -38,6 +38,12 @@ layer:
         - ARDUINO_UNO_D17
         - ARDUINO_UNO_D18
         - ARDUINO_UNO_D19
+        - SENSOR_TEMPERATURE
+        - SENSOR_HUMIDITY
+        - SENSOR_PRESSURE
+        - SENSOR_ACCELEROMETER
+        - SENSOR_GYROSCOPE
+        - SENSOR_MAGNETOMETER
         - STDIN
         - STDOUT
         - STDERR
@@ -143,10 +149,10 @@ layer:
       files:
         - file: ./Drivers/Sensors/Include/audio_drv.h
         - file: ./Drivers/Sensors/Source/Audio_B-U585I-IOT02A.c
-        - file: ./Drivers/Sensors/Config/sensor_config.h
         - file: ./Drivers/Sensors/Include/sensor_drv.h
-        - file: ./Drivers/Sensors/Source/sensor_drv.c
-        - file: ./Drivers/Sensors/Source/sensor_drv_hw.c
+        - file: ./Drivers/Sensors/Config/sensor_config.h
+        - file: ./Drivers/Sensors/Source/sensor_B-U585I-IOT02A.h
+        - file: ./Drivers/Sensors/Source/sensor_B-U585I-IOT02A.c
 
   linker:
     - script:  ./RTE/Device/STM32U585AIIx/ac6_linker_script.sct.src
